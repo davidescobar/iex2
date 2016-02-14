@@ -1,12 +1,8 @@
-{-# LANGUAGE BangPatterns #-}
-
 module Main where
 
 import Control.Concurrent
-import Control.Exception (displayException, SomeException, try)
+import Control.Exception (displayException, try)
 import Control.Monad
-import Data.Function ((&))
-import Data.List
 import Data.Maybe
 import System.Console.Haskeline
 import System.Directory
@@ -19,24 +15,24 @@ import System.Process
 
 main :: IO ()
 main = do
-  cwd <- getCurrentDirectory
+  currentDir <- getCurrentDirectory
   args <- getArgs
   let args' = case length args of
-                0 -> [ "dev", cwd ]
-                1 -> args ++ [ cwd ]
+                0 -> [ "dev", currentDir ]
+                1 -> args ++ [ currentDir ]
                 _ -> take 2 args
-      [ env, workingDir ] = args'
+      [ mixEnv, workingDir ] = args'
   eitherDirContents <- try $ (getDirectoryContents workingDir) :: IO (Either SomeException [FilePath])
   case eitherDirContents of
-    Left error -> putStrLn $ (displayException error) ++ "\n"
+    Left err -> putStrLn $ (displayException err) ++ "\n"
     Right workingDirContents
       | "mix.exs" `elem` workingDirContents -> do
           -- Set environment variables
-          let envVars = if env /= "dev"
-                          then [ ("MIX_ENV", env),
+          let envVars = if mixEnv /= "dev"
+                          then [ ("MIX_ENV", mixEnv),
                                  ("DEEP_BLUE_SSL_KEY_PATH", "/Users/davidescobar/Downloads/wildcard_lendstreet_com_pkg/lendstreet.com.key"),
                                  ("DEEP_BLUE_SSL_CERT_PATH", "/Users/davidescobar/Downloads/wildcard_lendstreet_com_pkg/lendstreet.com.crt") ]
-                          else [ ("MIX_ENV", env) ]
+                          else [ ("MIX_ENV", mixEnv) ]
               historyFilePath = workingDir </> "iex2.log"
           mapM_ (\(var, value) -> setEnv var value) envVars
 
@@ -52,8 +48,8 @@ main = do
 
 runInteractiveConsole :: Handle -> Handle -> Handle -> ProcessHandle -> FilePath -> IO ()
 runInteractiveConsole hIn hOut hErr pid historyFilePath = do
-  forkIO $ runOutputLoop pid hOut hErr
-  forkIO $ runInputLoop pid hIn historyFilePath
+  _ <- forkIO $ runOutputLoop pid hOut hErr
+  _ <- forkIO $ runInputLoop pid hIn historyFilePath
   forever $ do
     threadDelay 1000000 -- 1 second
     exitCodeMaybe <- getProcessExitCode pid
@@ -66,7 +62,7 @@ runInputLoop pid hIn historyFilePath = do
   maybeLine <- runInputT settings (getInputLine "")
   success <- try $ hPutStrLn hIn (fromMaybe "" maybeLine) :: IO (Either SomeException ())
   case success of
-    Left error -> putStrLn $ displayException error
+    Left err -> putStrLn $ displayException err
     Right _ -> runInputLoop pid hIn historyFilePath
 
 
@@ -74,11 +70,11 @@ runOutputLoop :: ProcessHandle -> Handle -> Handle -> IO ()
 runOutputLoop pid hOut hErr = do
   contentsOrError <- try $ hGetContents hOut :: IO (Either SomeException String)
   case contentsOrError of
-    Left error -> do
-      putStrLn $ displayException error
+    Left contErr -> do
+      putStrLn $ displayException contErr
       errorContentsOrError <- try $ hGetContents hErr :: IO (Either SomeException String)
       case errorContentsOrError of
-        Left error -> putStrLn $ displayException error
+        Left errContErr -> putStrLn $ displayException errContErr
         Right errorContents -> putStrLn errorContents
     Right contents -> do
       putStrLn contents

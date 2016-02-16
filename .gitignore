@@ -1,4 +1,4 @@
 .cabal-sandbox/
 *.hi
 *.o
-
+.DS_Store

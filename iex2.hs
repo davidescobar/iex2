@@ -119,12 +119,13 @@ runOutputLoop hOut = do
   hOutReady <- hReady hOut
   if hOutReady
     then do
-      setSGR [ Reset ]
       contentsOrErr <- try $ hGetContents hOut :: IO (Either SomeException String)
       case contentsOrErr of
         Left contErr -> putStrLn $ displayException contErr
         Right contents -> do
+          setSGR [ Reset ]
           putStrLn contents
+          threadDelay 1000000 -- 1 second
           runOutputLoop hOut
     else runOutputLoop hOut
 
@@ -140,4 +141,6 @@ runErrorLoop hErr = do
         Left err -> putStrLn $ displayException err
         Right errContents -> putStrLn errContents
       setSGR [ Reset ]
-    else runErrorLoop hErr
+    else do
+      threadDelay 1000000 -- Delay 1 second to avoid taking up 100% of one processor core.
+      runErrorLoop hErr

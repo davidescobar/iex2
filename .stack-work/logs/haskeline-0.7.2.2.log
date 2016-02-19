@@ -1,0 +1,118 @@
+[1 of 1] Compiling Main             ( /tmp/stack31348/haskeline-0.7.2.2/Setup.hs, /tmp/stack31348/haskeline-0.7.2.2/.stack-work/dist/i386-linux/Cabal-1.22.5.0/setup/Main.o )
+Linking /tmp/stack31348/haskeline-0.7.2.2/.stack-work/dist/i386-linux/Cabal-1.22.5.0/setup/setup ...
+*** Warning: running on POSIX but not building the terminfo backend. ***
+You may need to install the terminfo package manually, e.g. with
+"cabal install terminfo"; or, use "-fterminfo" when configuring or
+installing this package.
+
+Configuring haskeline-0.7.2.2...
+Building haskeline-0.7.2.2...
+Preprocessing library haskeline-0.7.2.2...
+
+on the commandline: Warning:
+    -XOverlappingInstances is deprecated: instead use per-instance pragmas OVERLAPPING/OVERLAPPABLE/OVERLAPS
+[ 1 of 27] Compiling System.Console.Haskeline.Recover ( System/Console/Haskeline/Recover.hs, .stack-work/dist/i386-linux/Cabal-1.22.5.0/build/System/Console/Haskeline/Recover.o )
+[ 2 of 27] Compiling System.Console.Haskeline.Directory ( .stack-work/dist/i386-linux/Cabal-1.22.5.0/build/System/Console/Haskeline/Directory.hs, .stack-work/dist/i386-linux/Cabal-1.22.5.0/build/System/Console/Haskeline/Directory.o )
+[ 3 of 27] Compiling System.Console.Haskeline.Key ( System/Console/Haskeline/Key.hs, .stack-work/dist/i386-linux/Cabal-1.22.5.0/build/System/Console/Haskeline/Key.o )
+[ 4 of 27] Compiling System.Console.Haskeline.History ( System/Console/Haskeline/History.hs, .stack-work/dist/i386-linux/Cabal-1.22.5.0/build/System/Console/Haskeline/History.o )
+[ 5 of 27] Compiling System.Console.Haskeline.LineState ( System/Console/Haskeline/LineState.hs, .stack-work/dist/i386-linux/Cabal-1.22.5.0/build/System/Console/Haskeline/LineState.o )
+[ 6 of 27] Compiling System.Console.Haskeline.Command ( System/Console/Haskeline/Command.hs, .stack-work/dist/i386-linux/Cabal-1.22.5.0/build/System/Console/Haskeline/Command.o )
+
+System/Console/Haskeline/Command.hs:32:1: Warning:
+    The import of ‘Control.Applicative’ is redundant
+      except perhaps to import instances from ‘Control.Applicative’
+    To import instances alone, use: import Control.Applicative()
+[ 7 of 27] Compiling System.Console.Haskeline.Backend.WCWidth ( System/Console/Haskeline/Backend/WCWidth.hs, .stack-work/dist/i386-linux/Cabal-1.22.5.0/build/System/Console/Haskeline/Backend/WCWidth.o )
+[ 8 of 27] Compiling System.Console.Haskeline.MonadException ( System/Console/Haskeline/MonadException.hs, .stack-work/dist/i386-linux/Cabal-1.22.5.0/build/System/Console/Haskeline/MonadException.o )
+
+System/Console/Haskeline/MonadException.hs:38:1: Warning:
+    Module ‘Control.Monad.Trans.Error’ is deprecated:
+      Use Control.Monad.Trans.Except instead
+
+System/Console/Haskeline/MonadException.hs:43:1: Warning:
+    The import of ‘Data.Monoid’ is redundant
+      except perhaps to import instances from ‘Data.Monoid’
+    To import instances alone, use: import Data.Monoid()
+
+System/Console/Haskeline/MonadException.hs:161:29: Warning:
+    In the use of type constructor or class ‘Error’
+    (imported from Control.Monad.Trans.Error):
+    Deprecated: "Use Control.Monad.Trans.Except instead"
+
+System/Console/Haskeline/MonadException.hs:161:57: Warning:
+    In the use of type constructor or class ‘ErrorT’
+    (imported from Control.Monad.Trans.Error):
+    Deprecated: "Use Control.Monad.Trans.Except instead"
+
+System/Console/Haskeline/MonadException.hs:162:19: Warning:
+    In the use of data constructor ‘ErrorT’
+    (imported from Control.Monad.Trans.Error):
+    Deprecated: "Use Control.Monad.Trans.Except instead"
+
+System/Console/Haskeline/MonadException.hs:163:40: Warning:
+    In the use of data constructor ‘ErrorT’
+    (imported from Control.Monad.Trans.Error):
+    Deprecated: "Use Control.Monad.Trans.Except instead"
+
+System/Console/Haskeline/MonadException.hs:163:55: Warning:
+    In the use of ‘runErrorT’
+    (imported from Control.Monad.Trans.Error):
+    Deprecated: "Use Control.Monad.Trans.Except instead"
+
+System/Console/Haskeline/MonadException.hs:164:29: Warning:
+    In the use of ‘runErrorT’
+    (imported from Control.Monad.Trans.Error):
+    Deprecated: "Use Control.Monad.Trans.Except instead"
+[ 9 of 27] Compiling System.Console.Haskeline.Prefs ( System/Console/Haskeline/Prefs.hs, .stack-work/dist/i386-linux/Cabal-1.22.5.0/build/System/Console/Haskeline/Prefs.o )
+[10 of 27] Compiling System.Console.Haskeline.Monads ( System/Console/Haskeline/Monads.hs, .stack-work/dist/i386-linux/Cabal-1.22.5.0/build/System/Console/Haskeline/Monads.o )
+
+System/Console/Haskeline/Monads.hs:24:1: Warning:
+    The import of ‘Control.Applicative’ is redundant
+      except perhaps to import instances from ‘Control.Applicative’
+    To import instances alone, use: import Control.Applicative()
+[11 of 27] Compiling System.Console.Haskeline.Command.Undo ( System/Console/Haskeline/Command/Undo.hs, .stack-work/dist/i386-linux/Cabal-1.22.5.0/build/System/Console/Haskeline/Command/Undo.o )
+[12 of 27] Compiling System.Console.Haskeline.Command.History ( System/Console/Haskeline/Command/History.hs, .stack-work/dist/i386-linux/Cabal-1.22.5.0/build/System/Console/Haskeline/Command/History.o )
+[13 of 27] Compiling System.Console.Haskeline.Command.KillRing ( System/Console/Haskeline/Command/KillRing.hs, .stack-work/dist/i386-linux/Cabal-1.22.5.0/build/System/Console/Haskeline/Command/KillRing.o )
+[14 of 27] Compiling System.Console.Haskeline.Completion ( System/Console/Haskeline/Completion.hs, .stack-work/dist/i386-linux/Cabal-1.22.5.0/build/System/Console/Haskeline/Completion.o )
+[15 of 27] Compiling System.Console.Haskeline.Term ( System/Console/Haskeline/Term.hs, .stack-work/dist/i386-linux/Cabal-1.22.5.0/build/System/Console/Haskeline/Term.o )
+
+System/Console/Haskeline/Term.hs:107:16: Warning:
+    In the use of ‘isEmptyChan’
+    (imported from Control.Concurrent, but defined in Control.Concurrent.Chan):
+    Deprecated: "if you need this operation, use Control.Concurrent.STM.TChan instead.  See <http://ghc.haskell.org/trac/ghc/ticket/4154> for details"
+[16 of 27] Compiling System.Console.Haskeline.RunCommand ( System/Console/Haskeline/RunCommand.hs, .stack-work/dist/i386-linux/Cabal-1.22.5.0/build/System/Console/Haskeline/RunCommand.o )
+[17 of 27] Compiling System.Console.Haskeline.Backend.Posix.Encoder ( System/Console/Haskeline/Backend/Posix/Encoder.hs, .stack-work/dist/i386-linux/Cabal-1.22.5.0/build/System/Console/Haskeline/Backend/Posix/Encoder.o )
+[18 of 27] Compiling System.Console.Haskeline.Backend.Posix ( .stack-work/dist/i386-linux/Cabal-1.22.5.0/build/System/Console/Haskeline/Backend/Posix.hs, .stack-work/dist/i386-linux/Cabal-1.22.5.0/build/System/Console/Haskeline/Backend/Posix.o )
+[19 of 27] Compiling System.Console.Haskeline.Backend.Terminfo ( System/Console/Haskeline/Backend/Terminfo.hs, .stack-work/dist/i386-linux/Cabal-1.22.5.0/build/System/Console/Haskeline/Backend/Terminfo.o )
+
+System/Console/Haskeline/Backend/Terminfo.hs:8:1: Warning:
+    The import of ‘Control.Applicative’ is redundant
+      except perhaps to import instances from ‘Control.Applicative’
+    To import instances alone, use: import Control.Applicative()
+[20 of 27] Compiling System.Console.Haskeline.Backend.DumbTerm ( System/Console/Haskeline/Backend/DumbTerm.hs, .stack-work/dist/i386-linux/Cabal-1.22.5.0/build/System/Console/Haskeline/Backend/DumbTerm.o )
+
+System/Console/Haskeline/Backend/DumbTerm.hs:11:1: Warning:
+    The import of ‘Control.Applicative’ is redundant
+      except perhaps to import instances from ‘Control.Applicative’
+    To import instances alone, use: import Control.Applicative()
+[21 of 27] Compiling System.Console.Haskeline.Backend ( System/Console/Haskeline/Backend.hs, .stack-work/dist/i386-linux/Cabal-1.22.5.0/build/System/Console/Haskeline/Backend.o )
+[22 of 27] Compiling System.Console.Haskeline.InputT ( System/Console/Haskeline/InputT.hs, .stack-work/dist/i386-linux/Cabal-1.22.5.0/build/System/Console/Haskeline/InputT.o )
+
+System/Console/Haskeline/InputT.hs:16:1: Warning:
+    The import of ‘Control.Applicative’ is redundant
+      except perhaps to import instances from ‘Control.Applicative’
+    To import instances alone, use: import Control.Applicative()
+
+System/Console/Haskeline/InputT.hs:17:1: Warning:
+    The import of ‘Control.Monad’ is redundant
+      except perhaps to import instances from ‘Control.Monad’
+    To import instances alone, use: import Control.Monad()
+[23 of 27] Compiling System.Console.Haskeline.Command.Completion ( System/Console/Haskeline/Command/Completion.hs, .stack-work/dist/i386-linux/Cabal-1.22.5.0/build/System/Console/Haskeline/Command/Completion.o )
+[24 of 27] Compiling System.Console.Haskeline.Vi ( System/Console/Haskeline/Vi.hs, .stack-work/dist/i386-linux/Cabal-1.22.5.0/build/System/Console/Haskeline/Vi.o )
+[25 of 27] Compiling System.Console.Haskeline.Emacs ( System/Console/Haskeline/Emacs.hs, .stack-work/dist/i386-linux/Cabal-1.22.5.0/build/System/Console/Haskeline/Emacs.o )
+[26 of 27] Compiling System.Console.Haskeline ( System/Console/Haskeline.hs, .stack-work/dist/i386-linux/Cabal-1.22.5.0/build/System/Console/Haskeline.o )
+[27 of 27] Compiling System.Console.Haskeline.IO ( System/Console/Haskeline/IO.hs, .stack-work/dist/i386-linux/Cabal-1.22.5.0/build/System/Console/Haskeline/IO.o )
+In-place registering haskeline-0.7.2.2...
+Installing library in
+/home/dev/.stack/snapshots/i386-linux/lts-5.3/7.10.3/lib/i386-linux-ghc-7.10.3/haskeline-0.7.2.2-9pt8e6i7TJsC6RGhyCCgZ8
+Registering haskeline-0.7.2.2...

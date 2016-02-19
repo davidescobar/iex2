@@ -22,7 +22,7 @@ library
 executable iex2
   hs-source-dirs:      app
   main-is:             Main.hs
-  ghc-options:         -O2 --make -Wall -threaded -static -optc-static -rtsopts -with-rtsopts=-N
+  ghc-options:         -O2 --make -Wall -threaded -static -optc-static -optl-static -rtsopts -with-rtsopts=-N
   build-depends:       base,
                        ansi-terminal,
                        containers,

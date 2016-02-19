@@ -42,6 +42,7 @@ main = do
               keyFilePath = fromMaybe "" (Map.lookup "key" sslFilePaths)
               envVars = if mixEnv /= "dev"
                           then [ ("MIX_ENV", mixEnv),
+                                 ("PORT", "4001"),
                                  ("DEEP_BLUE_SSL_KEY_PATH", crtFilePath),
                                  ("DEEP_BLUE_SSL_CERT_PATH", keyFilePath) ]
                           else [ ("MIX_ENV", mixEnv) ]
